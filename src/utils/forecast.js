@@ -14,7 +14,10 @@ const forecast =(latitude,longitute,callBack) => {
         else{
             const data = JSON.parse(response.body)
             // console.log(data)
-            callBack(undefined, data.current.weather_descriptions+": The current tempearture is "+data.current.temperature+" and its feels like "+ data.current.feelslike)
+            callBack(undefined, data.current.weather_descriptions+": The current tempearture is "+data.current.temperature+" and its feels like "+ data.current.feelslike+
+            " pressure: "+ data.current.pressure +
+            " humidity: "+ data.current.humidity 
+            )
         }
 
     });
